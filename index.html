@@ -1,0 +1,101 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wargamini AI Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .clay-shadow { box-shadow: 10px 10px 20px #d9e2ec, -10px -10px 20px #ffffff; }
+        .bounce-card { transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .bounce-card:hover { transform: translateY(-12px) scale(1.03); }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#eef2f9] text-gray-700">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-64 bg-[#ffb8d1] m-4 rounded-[2.5rem] flex flex-col justify-between p-6 shadow-xl transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+            <button onclick="toggleSidebar()" class="lg:hidden text-white absolute top-6 right-6">✕</button>
+            <div class="overflow-y-auto scrollbar-hide pb-4">
+                <div class="flex flex-col items-center mb-8 mt-2">
+                    <div class="w-20 h-20 rounded-full bg-white p-1 mb-4 shadow-lg overflow-hidden">
+                        <img src="https://i.imgur.com/EY2TXVb.jpeg" alt="Profile" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h2 class="text-white font-bold text-lg">wargamini 👑</h2>
+                </div>
+                <nav class="flex flex-col gap-2 text-white/90">
+                    <div class="bg-white text-[#ff8ba8] p-3 rounded-xl font-bold cursor-pointer">Beranda Kelas</div>
+                    <div class="hover:bg-[#ff9ebb] p-3 rounded-xl cursor-pointer">Materi Belajar</div>
+                    <div class="hover:bg-[#ff9ebb] p-3 rounded-xl cursor-pointer">AI Tools</div>
+                    <div class="hover:bg-[#ff9ebb] p-3 rounded-xl cursor-pointer">Pengaturan</div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 lg:p-6">
+            <header class="flex justify-between items-center mb-8">
+                <button onclick="toggleSidebar()" class="lg:hidden p-2 bg-white rounded-xl shadow-md">☰</button>
+                <h1 class="text-2xl font-extrabold text-gray-800">Dashboard Belajar</h1>
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-[#ffb8d1]">🔔</div>
+            </header>
+
+            <!-- Banner -->
+            <div class="w-full h-48 bg-blue-100 rounded-[2rem] mb-8 clay-shadow overflow-hidden">
+                <img src="https://i.imgur.com/eKwLIJt.jpeg" alt="Banner" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white/80 p-2 rounded-[1.5rem] shadow-md bounce-card cursor-pointer">
+                    <img src="https://i.imgur.com/tPtstuR.jpeg" class="rounded-[1rem] w-full">
+                </div>
+                <div class="bg-white/80 p-2 rounded-[1.5rem] shadow-md bounce-card cursor-pointer">
+                    <img src="https://i.imgur.com/1VhObZ7.jpeg" class="rounded-[1rem] w-full">
+                </div>
+                <div class="bg-white/80 p-2 rounded-[1.5rem] shadow-md bounce-card cursor-pointer">
+                    <img src="https://i.imgur.com/JqtFIih.jpeg" class="rounded-[1rem] w-full">
+                </div>
+                <div class="bg-white/80 p-2 rounded-[1.5rem] shadow-md bounce-card cursor-pointer">
+                    <img src="https://i.imgur.com/oqW6zjt.jpeg" class="rounded-[1rem] w-full">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-[2rem] clay-shadow">
+                    <h3 class="font-bold mb-4">Materi Kelas AI</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-pink-50 rounded-xl font-bold text-sm text-gray-800">1. Dasar Artificial Intelligence</div>
+                        <div class="p-3 bg-blue-50 rounded-xl font-bold text-sm text-gray-800">2. Mastering Prompt Engineering</div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-[2rem] clay-shadow">
+                    <h3 class="font-bold mb-4">Tutorial Populer</h3>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center text-[#ffb8d1]">✨</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Karakter 3D Hijab</h4>
+                            <p class="text-xs text-gray-400">Bing Image Creator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('-translate-x-full');
+        }
+    </script>
+</body>
+</html>
+
+```
